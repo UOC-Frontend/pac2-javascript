@@ -6,7 +6,6 @@ alert("Hi, this app needs two numbers between 1 and 50");
 
 while (isValid === false) {
   num1 = prompt("Write a first number");
-  console.log("Recibido: " + num1);
   isNumberValid(num1);
 }
 
@@ -21,7 +20,6 @@ function isNumberValid(number) {
   if (number != undefined && number != null) {
     let aux = parseInt(number);
     if (aux > 0 && aux <= 50) {
-      console.log("Numero correcto recibido!!!");
       isValid = true;
     } else {
       alert(num1 + " ==>  is not correct!");
@@ -49,14 +47,12 @@ function isPrime(num) {
     i++;
   } while (i < num);
 
-
   if (primer === true) {
-    return num + " Is prime number";
+    return num + " Prime number";
   } else {
-    return num + " Is not a prime number";
+    return num + " NOT a prime number";
   }
 }
-
 
 function isEven(num) {
   if (num % 2 === 0) {
@@ -66,13 +62,11 @@ function isEven(num) {
   }
 }
 
-
 function printRange(num1, num2) {
   let result = [];
   if (num1 === num2) {
     result.push(num1)
   } else if (num1 < num2) {
-    num1++;
     for (let i = num1; i < num2; i++) {
       if (i % 2 === 0) {
         result.push(i);
@@ -88,13 +82,14 @@ function printRange(num1, num2) {
   return result;
 }
 
+function showResult() {
+  alert(
+    `Result: 
+    SUMA -> ${getResult()}
+    PRIMERS -> ${isPrime(num1)}  /  ${isPrime(num2)}
+    EVEN or ODD -> ${isEven(num1)}  /  ${isEven(num2)}
+    RANGE -> ${printRange(num1, num2)}
+    `
+  );
+}
 
-
-alert(
-  `Result: 
-  SUMA -> ${getResult()}
-  PRIMERS -> ${isPrime(num1)}  /  ${isPrime(num2)}
-  EVEN or ODD -> ${isEven(num1)}  /  ${isEven(num2)}
-  RANGE -> ${printRange(num1, num2)}
-  `
-);
