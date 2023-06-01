@@ -4,23 +4,23 @@ let isValid = false;
 
 alert("Hi, this app needs two numbers between 1 and 50");
 
-while (isValid === false) {
-  num1 = Number(prompt("Write a first number"));
-  isNumberValid(num1);
+function getNumbers(message, isValid) {
+  let num = 0;
+  while (!isValid) {
+    num = Number(prompt(message));
+    isValid = isNumberValid(num);
+  }
+  return num;
 }
 
-isValid = false;
-
-while (isValid === false) {
-  num2 = Number(prompt("Write a second number"));
-  isNumberValid(num2);
-}
+num1 = getNumbers("Write a first number", false);
+num2 = getNumbers("Write a second number", false);
 
 function isNumberValid(number) {
   if (number != undefined && number != null) {
     let aux = parseInt(number);
     if (aux > 0 && aux <= 50) {
-      isValid = true;
+      return true;
     } else {
       alert(num1 + " ==>  is not correct!");
     }
