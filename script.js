@@ -5,14 +5,14 @@ let isValid = false;
 alert("Hi, this app needs two numbers between 1 and 50");
 
 while (isValid === false) {
-  num1 = prompt("Write a first number");
+  num1 = Number(prompt("Write a first number"));
   isNumberValid(num1);
 }
 
 isValid = false;
 
 while (isValid === false) {
-  num2 = prompt("Write a second number");
+  num2 = Number(prompt("Write a second number"));
   isNumberValid(num2);
 }
 
